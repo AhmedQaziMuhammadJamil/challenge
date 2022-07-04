@@ -21,7 +21,7 @@ spec:
         backend:
           service:
             name: {{ $serviceName }}
-            port: {{ $servicePort }}
+            port: {{ .Values.service.port }}
      {{- end }}
   {{- end }}
 
