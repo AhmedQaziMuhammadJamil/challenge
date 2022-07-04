@@ -9,7 +9,7 @@ metadata:
   name: {{ include "mywebapp.fullname" . }}
   annotations:
 {{ toYaml .Values.ingress.annotations | indent 4 }}
- {{- end }}
+d}
 spec:
   ingressClassName: {{.Values.ingressClassName}} 
   rules:
@@ -20,8 +20,8 @@ spec:
       - path: {{ default "/"  | quote }}
         backend:
           service
-            name: {{ default $serviceName }}
-            port: {{ default $servicePort }}
+            name: {{  $serviceName }}
+            port: {{ .Values.service.port }}
      {{- end }}
   {{- end }}
 
