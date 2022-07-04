@@ -21,7 +21,7 @@ spec:
         backend:
           service:
             name: {{ $serviceName }}
-            port: {{ .Values.service.port }}
+            port: 80
      {{- end }}
   {{- end }}
 
