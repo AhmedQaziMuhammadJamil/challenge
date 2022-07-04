@@ -9,7 +9,7 @@ metadata:
   name: {{ include "mywebapp.fullname" . }}
   annotations:
 {{ toYaml .Values.ingress.annotations | indent 4 }}
-d}
+
 spec:
   ingressClassName: {{.Values.ingressClassName}} 
   rules:
