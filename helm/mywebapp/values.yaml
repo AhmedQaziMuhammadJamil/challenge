@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: 345156409809.dkr.ecr.eu-west-1.amazonaws.com/plt.test
+  repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/notejam-prod-ecr-registry:2022.07.03.main-77315733-2605141896
   pullPolicy: IfNotPresent
   tag: test1
 
@@ -19,10 +19,18 @@ resources:
     cpu: 200m
     memory: 200Mi
   requests:
-    cpu: 100m
+    cpu: 150m
     memory: 100Mi
 
 autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 3
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 5
+  - type: Resource
+    resource:
+      name: cpu
+      targetCPUUtilizationPercentage: 80
+  - type: Resource
+    resource:
+      name: memory
+      targetMemoryUtilizationPercentage: 85
