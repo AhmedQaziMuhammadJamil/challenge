@@ -2,9 +2,9 @@
 replicaCount: 1
 
 image:
-  repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/notejam-prod-ecr-registry
+  repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/asp-app-ahmed-prod-ecr-registry
   pullPolicy: IfNotPresent
-  tag: 2022.07.03.main-77315733-2605141896
+  tag: latest
 
   
 
