@@ -1,27 +1,27 @@
-{{- if .Values.ingress.enabled }}
-{{- $servicePort := .Values.service.port }}
-{{- $serviceName := include "mywebapp.fullname" . }}
-{{- $ingressClassName := .Values.ingressClassName  }}
+#{{- if .Values.ingress.enabled }}
+#{{- $servicePort := .Values.service.port }}
+#{{- $serviceName := include "mywebapp.fullname" . }}
+#{{- $ingressClassName := .Values.ingressClassName  }}
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: {{ include "mywebapp.fullname" . }}
-  annotations:
-{{ toYaml .Values.ingress.annotations | indent 4 }}
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+ # name: {{ include "mywebapp.fullname" . }}
+ # annotations:
+#{{ toYaml .Values.ingress.annotations | indent 4 }}
 
-spec:
-  ingressClassName: {{.Values.ingressClassName}} 
-  rules:
-  {{- range  $host:= .Values.ingress.hosts }}
-  - host: {{ $host }}
-    http:
-      paths:
-      - path: {{ default "/"  | quote }}
-        backend:
-          service:
-            name: {{ $serviceName }}
-            port: 80
-     {{- end }}
-  {{- end }}
+#spec:
+ # ingressClassName: {{.Values.ingressClassName}} 
+ # rules:
+  #{{- range  $host:= .Values.ingress.hosts }}
+ # - host: {{ $host }}
+  #  http:
+   #   paths:
+   #   - path: {{ default "/"  | quote }}
+    #    backend:
+     #     service:
+      #      name: {{ $serviceName }}
+       #     port: 80
+    # {{- end }}
+ # {{- end }}
 
