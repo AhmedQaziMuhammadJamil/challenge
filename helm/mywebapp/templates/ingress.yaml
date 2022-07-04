@@ -21,6 +21,5 @@ spec:
           service
             name: {{ default $serviceName }}
             port: {{ default $servicePort }}
-   {{- end }}
   {{- end }}
 
