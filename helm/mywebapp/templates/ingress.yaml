@@ -20,7 +20,6 @@ spec:
         backend:
           service
             name: {{ default $serviceName }}
-        {{- end }}
             port: {{ default $servicePort }}
       {{- end }}
 {{- end -}}
