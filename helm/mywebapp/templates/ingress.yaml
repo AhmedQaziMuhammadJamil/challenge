@@ -20,8 +20,8 @@ spec:
       - path: {{ default "/"  | quote }}
         backend:
           service
-            name: {{ .$serviceName }}
-            port: {{ .$servicePort }}
+            name: {{ $serviceName }}
+            port: {{ $servicePort }}
      {{- end }}
   {{- end }}
 
