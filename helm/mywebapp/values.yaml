@@ -8,8 +8,9 @@ image:
   
 
 container:
-  env: blahlah
-
+  env: 
+  - name: key
+    value: somevalue
 serviceAccount:
   create: true
   name: ""
