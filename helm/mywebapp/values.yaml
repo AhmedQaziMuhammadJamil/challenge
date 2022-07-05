@@ -2,9 +2,9 @@
 replicaCount: 1
 
 image:
-  repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/asp-app-ahmed-prod-ecr-registry
+  repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/asp-prod-app
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: 2022.07.05.main-fe3be3cb-2619029429
 
   
 
