@@ -3,7 +3,7 @@ name: ASP-Prod-Workflow
 on:
   push:
     branches:
-      - main
+      - master
     paths:
     - app/**
   pull_request:
