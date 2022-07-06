@@ -1,26 +1,18 @@
----
 replicaCount: 1
-
 image:
-  repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/asp-prod-app # {"$imagepolicy": "flux-system:asp-prod-app"}
+  repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/asp-prod-app:2022.07.06.main-994c0b91-2624573027 # {"$imagepolicy": "flux-system:asp-prod-app"}
   pullPolicy: IfNotPresent
-  tag: 2022.07.06.main-a28e1f7a-2623522754  # {"$imagepolicy": "flux-system:asp-prod-app:tag"}
-
-  
-
+  tag: 2022.07.06.main-994c0b91-2624573027 # {"$imagepolicy": "flux-system:asp-prod-app:tag"}
 container:
   env:
   - name: key
-    value: something 
-
+    value: something
 serviceAccount:
   create: true
   name: ""
-
 service:
-  type: ClusterIP 
+  type: ClusterIP
   port: 80
-
 resources:
   limits:
     cpu: 200m
@@ -28,24 +20,21 @@ resources:
   requests:
     cpu: 150m
     memory: 100Mi
-
 autoscaling:
   enabled: true
   minReplicas: 3
   maxReplicas: 5
   targetCPUUtilizationPercentage: 80
   targetMemoryUtilizationPercentage: 85
-
 ingress:
   enabled: true
   annotations:
-   alb.ingress.kubernetes.io/scheme: internal
-   alb.ingress.kubernetes.io/target-type: ip
-   alb.ingress.kubernetes.io/group.name: "public"
-   alb.ingress.kubernetes.io/manage-backend-security-group-rules: "false"
-   alb.ingress.kubernetes.io/security-groups: "NoteJam-Alb-SG-prod"
-   alb.ingress.kubernetes.io/success-codes: 200,301,302
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: "public"
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "false"
+    alb.ingress.kubernetes.io/security-groups: "NoteJam-Alb-SG-prod"
+    alb.ingress.kubernetes.io/success-codes: 200,301,302
   ingressClassName: public
   hosts:
-    - ahmed-asp.pltworkshop4.com
-
+  - ahmed-asp.pltworkshop4.com
