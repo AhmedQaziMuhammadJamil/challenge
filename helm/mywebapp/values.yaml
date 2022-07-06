@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: 670115915839.dkr.ecr.eu-west-1.amazonaws.com/asp-prod-app # {"$imagepolicy": "flux-system:asp-prod-app:name"}
   pullPolicy: IfNotPresent
-  tag: 2022.07.06.main-994c0b91-2624573027 # {"$imagepolicy": "flux-system:asp-prod-app:tag"}
+  tag: 2022.07.06.main-4897de0a-2624981877 # {"$imagepolicy": "flux-system:asp-prod-app:tag"}
 container:
   env:
   - name: key
