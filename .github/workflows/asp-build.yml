@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-    - challenge/**
+    - app/**
   pull_request:
     paths:
-    - challenge/**
+    - app/**
   workflow_dispatch:
 
 jobs:
