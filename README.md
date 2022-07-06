@@ -5,6 +5,8 @@ Your goal is to deploy the included application (under `app/`) to the EKS cluste
 
 <br>
 
+
+
 ## Objectives:
 
 1. Enable HPA for the deployment and set the target utilization to 80% for CPU and 85% for memory.
