@@ -5,8 +5,8 @@ image:
   tag: 2022.07.06.main-3e894836-2625826823 # {"$imagepolicy": "flux-system:asp-prod-app:tag"}
 container:
   env:
-  - name: key
-    value: something
+  - name: Title
+    value: Ahmed
 serviceAccount:
   create: true
   name: ""
